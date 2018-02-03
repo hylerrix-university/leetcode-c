@@ -34,14 +34,14 @@ void SelectionSort (int arr[], int len) {
     int i, j, temp, min;
     for (i = 0; i < len - 1; i++) {
     	min = i;
-    	for (j = i + 1; j < len - 1; j++) {
-    		if (arr[min] > arr[j]) {
+    	for (j = i + 1; j < len; j++) {
+    		if (arr[j] < arr[min]) {
     			// 只需找到最小的值的位置后一次性替换
     			min = j;
     		}
-    		temp = arr[min];
-    		arr[min] = arr[i];
-    		arr[i] = temp;
     	}
+        temp = arr[min];
+        arr[min] = arr[i];
+        arr[i] = temp;
     }
 }
